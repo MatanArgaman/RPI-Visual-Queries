@@ -1,0 +1,46 @@
+#############################################################
+Hardware:
+#############################################################
+
+1. RaspBerry Pi model B+
+2. Raspberry Pi HD Camera:
+ a.	Max video resolution: 1080p
+ b. Size: 36 x 36 mm
+ c. Lens holder: M12x0.5 or CS Mount
+3. RPi Camera Extension Kit Bitwizard
+4. 300 Mbps Wireless N USB Adapter TL-WN821N 
+5. Headset
+6. Powerbank
+
+#############################################################
+Software:
+#############################################################
+
+1. Ubuntu
+
+2. tesseract OCR install:
+apt-get install python tesseract-ocr
+pip install pytesseract 
+
+3.Set up audio cards use this:
+import alsaaudio
+alsaaudio.cards()
+
+Will list the available cards by name (suitable for PCM objects).
+
+Then change the card value from default to the required name in the file chooseApp2:
+alsaaudio.PCM(alsaaudio.PCM_CAPTURE,card='YourCardName')
+
+4. setting the default sound card used by alsamixer:
+https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture#An_example_of_setting_default_device_using_.22defaults.22_node
+in short:
+change the constants in the file /usr/share/alsa/alsa.conf:
+defaults.ctl.card 1; # Sets default device and control to second card (counting begins with 0).
+defaults.pcm.card 1; 
+
+5. Additional needed audio package installs: 
+apt-get install python-pyaudio
+apt-get install flac
+ 
+6. installing pil:
+apt-get install python-imaging (https://www.youtube.com/watch?v=n9q3BfgjFnA) 
