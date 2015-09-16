@@ -44,3 +44,13 @@ apt-get install flac
  
 6. installing pil:
 apt-get install python-imaging (https://www.youtube.com/watch?v=n9q3BfgjFnA) 
+
+7. Python-OpenCV
+On your RPI:
+- Start with a clean and up to date raspbian installation (e.g. use the one on raspberrypi.org).
+- Follow this short guide to add a necessary repository and install binary opencv 2.4.9 packages (no need to compile anything):
+
+http://notbrainsurgery.livejournal.com/43832.html
+
+- After you do the above, also run
+sudo apt-get install python-opencv opencv-doc
